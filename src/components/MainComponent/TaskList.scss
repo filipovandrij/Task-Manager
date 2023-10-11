@@ -1,0 +1,29 @@
+.task_list {
+    list-style: none;
+    padding: 0;
+    margin: 12px 0 0;
+    li {
+        margin-top: 12px;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.control_panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priority_marker {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+}
+
+.complete_task {
+    input {
+        width: 42px;
+        height: 42px;
+    }
+}

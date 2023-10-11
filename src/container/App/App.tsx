@@ -3,11 +3,13 @@ import Header from '../Header/Header'
 import Main from '../Main/Main'
 
 function App() {
-    const [filter, setFilter] = useState<string | undefined>(undefined)
+    const [filter, setFilter] = useState<string | undefined | boolean>(
+        undefined
+    )
     return (
         <div className="App">
             <Header setFilter={setFilter} />
-            <Main />
+            <Main filter={filter} />
         </div>
     )
 }

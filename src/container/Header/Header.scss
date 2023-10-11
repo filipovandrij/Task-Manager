@@ -1,0 +1,20 @@
+.description_priority_box {
+    display: flex;
+    justify-content: space-between;
+    button {
+        margin: 0 12px;
+        &:hover .marker_text {
+            display: block;
+        }
+    }
+}
+
+.marker_text {
+    display: none;
+    padding: 0 4px;
+    background-color: rgba(33, 37, 41, 0.5);
+    border-radius: 5px;
+    color: white;
+    position: absolute;
+    top: 100%;
+}

@@ -1,9 +1,15 @@
-import React from 'react'
+import TaskList from '../../components/MainComponent/TaskList'
 
-type Props = {}
+type Props = {
+    filter: string | undefined | boolean
+}
 
-const Main = (props: Props) => {
-    return <div>Main</div>
+const Main = ({ filter }: Props) => {
+    return (
+        <main>
+            <TaskList filter={filter} />
+        </main>
+    )
 }
 
 export default Main

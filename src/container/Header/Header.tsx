@@ -7,7 +7,9 @@ import { useAppDispatch } from '../../redux/hooks'
 import AddTaskModal from '../../components/HeadeComponent/AddTaskModal'
 
 type Props = {
-    setFilter: React.Dispatch<React.SetStateAction<string | undefined>>
+    setFilter: React.Dispatch<
+        React.SetStateAction<string | undefined | boolean>
+    >
 }
 
 const Header = ({ setFilter }: Props) => {
@@ -19,7 +21,7 @@ const Header = ({ setFilter }: Props) => {
     }
 
     return (
-        <>
+        <header>
             <Navbar bg="dark" variant="dark">
                 <Navbar.Collapse
                     style={{ margin: '0 12px' }}
@@ -54,6 +56,22 @@ const Header = ({ setFilter }: Props) => {
                         >
                             <span className="marker_text">УСІ</span>
                         </Button>
+                        <Button
+                            className="priority_marker"
+                            variant="light"
+                            onClick={() => setFilter(false)}
+                        >
+                            Х<span className="marker_text">Х</span>
+                        </Button>
+                        <Button
+                            style={{ fontSize: '25' }}
+                            className="priority_marker"
+                            variant="primary"
+                            onClick={() => setFilter(true)}
+                        >
+                            &#10003;
+                            <span className="marker_text">Виконані</span>
+                        </Button>
                     </div>
                     <Button
                         variant="success"
@@ -68,7 +86,7 @@ const Header = ({ setFilter }: Props) => {
                 onHide={() => setShowModal(false)}
                 addTask={handleAddTask}
             />
-        </>
+        </header>
     )
 }
 
